@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gamerandtwo.wav-b539fbf50ee5369d65ef7fb1d7ff0903.sample"
+
+[deps]
+
+source_file="res://Music/gamerandtwo.wav"
+dest_files=[ "res://.import/gamerandtwo.wav-b539fbf50ee5369d65ef7fb1d7ff0903.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
