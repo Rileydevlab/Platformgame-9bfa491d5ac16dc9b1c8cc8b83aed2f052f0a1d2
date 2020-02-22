@@ -16,14 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Platformgame"
-run/main_scene="res://World.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Tscn/World.tscn"
+config/icon="res://Sprites/icon.png"
 
 [autoload]
 
-global="*res://global.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
+global="*res://Script/global.gd"
 
 [display]
 
@@ -35,14 +33,6 @@ window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
 
-[editor_plugins]
-
-enabled=PoolStringArray( "github-integration" )
-
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

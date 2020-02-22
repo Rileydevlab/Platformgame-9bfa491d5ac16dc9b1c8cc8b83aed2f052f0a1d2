@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Tscn/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Script/TileMap.gd" type="Script" id=3]
+[ext_resource path="res://Script/Musicplayer.gd" type="Script" id=4]
+[ext_resource path="res://Music/gamerandone.wav" type="AudioStream" id=5]
+[ext_resource path="res://Music/gamerandtwo.wav" type="AudioStream" id=6]
+[ext_resource path="res://Tres/JungleDirtTileSet.tres" type="TileSet" id=7]
+
+[node name="World" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, -64 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="Node" type="Node" parent="Player"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 32, 32 )
+format = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="TileMap"]
+wait_time = 0.001
+one_shot = true
+autostart = true
+
+[node name="poweruprandomizer" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="poweruprandomizer"]
+wait_time = 0.001
+one_shot = true
+
+[node name="Musicplayer" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Musicplayer"]
+stream = ExtResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musicplayer"]
+stream = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Musicplayer"]
+wait_time = 4.0
+one_shot = true

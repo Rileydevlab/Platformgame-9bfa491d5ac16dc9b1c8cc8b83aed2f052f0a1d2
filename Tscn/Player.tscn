@@ -1,0 +1,110 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Script/Poweruptimer.gd" type="Script" id=1]
+[ext_resource path="res://Script/Poweruprandomizer.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/run0.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/run2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/run1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/run3.png" type="Texture" id=7]
+[ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Script/Player.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 8 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 10 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "run"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 25 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -2, -10 )
+scale = Vector2( 2.2, 2.2 )
+shape = SubResource( 3 )
+
+[node name="poweruprandomizer" type="Label" parent="."]
+margin_left = -119.0
+margin_top = -115.0
+margin_right = 122.0
+margin_bottom = -52.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="poweruprandomizer"]
+
+[node name="timeinlabel" type="Label" parent="."]
+margin_left = -353.0
+margin_top = -483.0
+margin_right = 359.0
+margin_bottom = -438.0
+custom_fonts/font = SubResource( 5 )
+text = "Next power up in:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer2" type="Label" parent="."]
+margin_left = -224.0
+margin_top = -426.0
+margin_right = 226.0
+margin_bottom = -381.0
+custom_fonts/font = SubResource( 6 )
+text = "Time"
+align = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Timer2"]
+one_shot = true
