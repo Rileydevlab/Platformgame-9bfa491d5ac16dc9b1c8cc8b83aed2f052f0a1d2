@@ -1,11 +1,10 @@
 extends KinematicBody2D
 const UP = Vector2(0,-1)
-const GRAVITY = 20
-const MAX_SPEED = 400
+var GRAVITY = 20
+const powerupgravity = 15
 const JUMP_HEIGHT = -500
 var motion = Vector2()
 var startspeed = true 
-
 func _physics_process(delta):
 	print("X",motion.x)
 	print("Y",motion.y)
@@ -13,20 +12,32 @@ func _physics_process(delta):
 		get_tree().reload_current_scene()
 		print("restart")
 		pass
-	motion.y += GRAVITY
 	var friction = false
-	var ACCELERATION = .1
-	motion.x += ACCELERATION
 	$Sprite.flip_h = false
 	$Sprite.play("run")
-	if motion.x > 500:
+	if global.powerup == 0 && global.startspeed == true:
+		motion.x = 400
+		global.startspeed = false
+	if global.powerup == 0:
+		motion.x += .1
+		motion.y += GRAVITY
+	if global.powerup == 1:
+		motion.x = 550
+		motion.y += GRAVITY
+	if global.powerup == 2:
+		motion.x = 350
+		motion.y += GRAVITY
+	if global.powerup == 3:
+		motion.x = 400
+		motion.y += 15
+	
+	if motion.x > 500 && global.powerup == 0:
 		motion.x = 500
 	if motion.x < 300:
 		motion.x = -10
-	if startspeed == true:
-		motion.x = MAX_SPEED
-		startspeed = false
 	if motion.y > 2000:
+		global.powerup = 0
+		global.startspeed = true
 		get_tree().reload_current_scene()
 		print("restart")
 		pass

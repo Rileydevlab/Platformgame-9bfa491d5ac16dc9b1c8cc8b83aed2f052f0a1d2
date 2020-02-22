@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://Tres/JungleGrassTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Tscn/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Script/TileMap.gd" type="Script" id=3]
 [ext_resource path="res://Script/Musicplayer.gd" type="Script" id=4]
 [ext_resource path="res://Music/gamerandone.wav" type="AudioStream" id=5]
 [ext_resource path="res://Music/gamerandtwo.wav" type="AudioStream" id=6]
-[ext_resource path="res://Tres/JungleDirtTileSet.tres" type="TileSet" id=7]
 
 [node name="World" type="Node"]
 
@@ -18,7 +18,7 @@ current = true
 [node name="Node" type="Node" parent="Player"]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 7 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 script = ExtResource( 3 )

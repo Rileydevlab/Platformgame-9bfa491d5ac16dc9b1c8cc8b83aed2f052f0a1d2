@@ -45,7 +45,19 @@ func _physics_process(delta):
 				set_text("Slow Down!")
 			if cycle == 3:
 				set_text("Jump!")
+	if time == 11:
+		var poweruptext = get_text()
+		var powerupnumber = 0
+		if poweruptext == "Run!":
+			powerupnumber = 1
+		if poweruptext == "Slow Down!":
+			powerupnumber = 2
+		if poweruptext == "Jump!":
+			powerupnumber = 3
+		global.powerup = powerupnumber
 	if time == 15:
+		global.powerup = 0
+		global.startspeed = true
 		time = time - 15
 func _on_Timer_timeout():
 	time = time + 1
