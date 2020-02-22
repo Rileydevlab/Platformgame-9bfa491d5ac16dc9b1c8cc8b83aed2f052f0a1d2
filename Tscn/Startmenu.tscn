@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Script/Startmenu.gd" type="Script" id=1]
 [ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/run1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/run3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/run0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/run2.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 150
+size = 80
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -12,8 +16,16 @@ size = 75
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 75
+size = 70
 font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Startmenu" type="Control"]
 anchor_right = 1.0
@@ -24,44 +36,74 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 11.839
-margin_top = 364.601
-margin_right = 563.839
-margin_bottom = 651.601
+margin_left = 4.0
+margin_top = 365.0
+margin_right = 556.0
+margin_bottom = 791.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 31.0
 margin_right = 552.0
-margin_bottom = 133.0
+margin_bottom = 102.0
 custom_fonts/font = SubResource( 1 )
-text = "Game"
+text = "Space Jump"
 align = 1
 
 [node name="StartGame" type="Button" parent="VBoxContainer"]
 modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
-margin_top = 137.0
+margin_top = 106.0
 margin_right = 552.0
-margin_bottom = 210.0
+margin_bottom = 179.0
 custom_fonts/font = SubResource( 2 )
 text = "Start Simulation"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="QuitGame2" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
+margin_top = 183.0
+margin_right = 552.0
+margin_bottom = 251.0
+custom_fonts/font = SubResource( 3 )
+text = "Change Character"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGame3" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
+margin_top = 255.0
+margin_right = 552.0
+margin_bottom = 323.0
+custom_fonts/font = SubResource( 3 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="QuitGame" type="Button" parent="VBoxContainer"]
 modulate = Color( 0.262745, 0.32549, 1, 1 )
-margin_top = 214.0
+margin_top = 327.0
 margin_right = 552.0
-margin_bottom = 287.0
+margin_bottom = 395.0
 custom_fonts/font = SubResource( 3 )
 text = "Resume Reality"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 287.844, 338.721 )
+frames = SubResource( 4 )
+playing = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGame2" to="." method="_on_QuitGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGame3" to="." method="_on_QuitGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitGame" to="." method="_on_QuitGame_pressed"]
