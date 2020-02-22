@@ -19,10 +19,10 @@ func _physics_process(delta):
 	motion.x += ACCELERATION
 	$Sprite.flip_h = false
 	$Sprite.play("run")
-	if motion.x > 600:
-		motion.x = 600
+	if motion.x > 500:
+		motion.x = 500
 	if motion.x < 300:
-		motion.x = 0
+		motion.x = -10
 	if startspeed == true:
 		motion.x = MAX_SPEED
 		startspeed = false
@@ -46,6 +46,3 @@ func _physics_process(delta):
 			motion.x = lerp(motion.x, 0, 0.05)
 	motion = move_and_slide(motion, UP)
 	pass
-func reset():
-	global.blockxaxis = 0
-	global.blockxaxis = 0
