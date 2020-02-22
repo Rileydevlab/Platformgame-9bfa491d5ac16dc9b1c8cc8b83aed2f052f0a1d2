@@ -1,6 +1,6 @@
 extends TileMap
-var xaxis = global.blockxaxis 
-var yaxis = global.blockyaxis 
+var xaxis = 0
+var yaxis = 0
 var player = 1
 var startmap = true
 onready var powerupone = preload("res://powerup1.tscn")
@@ -11,159 +11,293 @@ func _ready():
 	timer.connect("timeout", self, "_on_Timer_timeout")
 
 func _physics_process(delta):
-#print("xaxis",global.blockxaxis,"yaxis",global.blockyaxis)
 	if startmap == true:
 		for i in range (10):
 			base_two()
 			startmap = false
-	var cycle = randi()%5+1
+	var cycle = randi()%8+1
 	if cycle == 1 && timeron == false:
 		base_one()
 		timeron = true
 		timer.start()
-	elif cycle == 2 && timeron == false:
-		timeron = true
+	if cycle == 2 && timeron == false:
 		base_two()
-		timer.start()
-	elif cycle == 3 && timeron == false:
 		timeron = true
+		timer.start()
+	if cycle == 3 && timeron == false:
 		base_three()
-		timer.start()
-	elif cycle == 4 && timeron == false:
 		timeron = true
+		timer.start()
+	if cycle == 4 && timeron == false:
 		base_four()
+		timeron = true
+		timer.start()
+	if cycle == 5 && timeron == false:
+		base_five()
+		timeron = true
+		timer.start()
+	if cycle == 6 && timeron == false:
+		base_six()
+		timeron = true
+		timer.start()
+	if cycle == 7 && timeron == false:
+		base_seven()
+		timeron = true
 		timer.start()
 func base_one():
-	var loc = Vector2(global.blockxaxis,global.blockyaxis)
+	var loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,0)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis ,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis ,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis ,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis ,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 5
-	global.blockyaxis  = global.blockyaxis  + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 5
+	yaxis  = yaxis  + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,2)
 func base_two():
-	var loc = Vector2(global.blockxaxis,global.blockyaxis)
+	var loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,0)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,2)
-	
 func base_three():
-	var loc = Vector2(global.blockxaxis,global.blockyaxis)
+	var loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,0)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 5
-	global.blockyaxis = global.blockyaxis - 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 5
+	yaxis = yaxis - 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,2)
 func base_four():
-	var loc = Vector2(global.blockxaxis,global.blockyaxis)
+	var loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,0)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 5
-	global.blockyaxis = global.blockyaxis + 6
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 5
+	yaxis = yaxis + 6
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,1)
-	global.blockxaxis = global.blockxaxis + 1
-	loc = Vector2(global.blockxaxis,global.blockyaxis)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,2)
+func base_five():
+	var loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,0)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 7
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,2)
+func base_six():
+	var loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,0)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,2)
+	xaxis = xaxis + 5
+	yaxis = yaxis - 2
+	set_cell(loc.x,loc.y,0)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,2)
+	set_cell(loc.x,loc.y,0)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,2)
+	xaxis = xaxis + 5
+	yaxis = yaxis - 2
+	set_cell(loc.x,loc.y,0)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,2)
+func base_seven():
+	var loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,0)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,2)
+	xaxis = xaxis + 5
+	yaxis = yaxis - 2
+	set_cell(loc.x,loc.y,0)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,1)
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,2)
 func _on_Timer_timeout():
-	#var powerup1 =  powerupone.instance()
-	#var yaxis = global.blockyaxis
-	#print(yaxis)
-	#powerup1.set_position(Vector2(global.blockxaxis,global.blockyaxis))
-	#get_tree().get_root().add_child(powerup1)
 	timeron = false
-#	print("new powerup")
+	

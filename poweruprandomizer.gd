@@ -14,7 +14,8 @@ func _physics_process(delta):
 
 func _on_Timer_timeout():
 	var powerup1 =  powerupone.instance()
-	powerup1.set_position(Vector2(global.blockxaxis,global.blockyaxis))
+	var yaxis = global.blockyaxis
+	powerup1.set_position(Vector2(global.blockxaxis,global.blockyaxis/10))
 	get_tree().get_root().add_child(powerup1)
 	timeron = false
 	print("new powerup")
