@@ -3,7 +3,6 @@ extends Label
 onready var timer = get_node("Timer")
 var timerstart = false
 var time = 0
-
 func _ready():
 	timer.connect("timeout", self, "_on_Timer_timeout")
 

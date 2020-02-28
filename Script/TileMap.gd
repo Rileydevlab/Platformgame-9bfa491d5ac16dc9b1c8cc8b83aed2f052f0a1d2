@@ -5,7 +5,6 @@ var player = 1
 var startmap = true
 onready var timer = get_node("Timer")
 var timeron = false
-
 func _ready():
 	timer.connect("timeout", self, "_on_Timer_timeout")
 
@@ -79,19 +78,19 @@ func base_one():
 	set_cell(loc.x,loc.y,2)
 func base_two():
 	var loc = Vector2(xaxis,yaxis)
-	set_cell(loc.x,loc.y,0)
+	set_cell(loc.x,loc.y,5)
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
-	set_cell(loc.x,loc.y,1)
+	set_cell(loc.x,loc.y,5)
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
-	set_cell(loc.x,loc.y,1)
+	set_cell(loc.x,loc.y,5)
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
-	set_cell(loc.x,loc.y,1)
+	set_cell(loc.x,loc.y,5)
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
-	set_cell(loc.x,loc.y,2)
+	set_cell(loc.x,loc.y,5)
 func base_three():
 	var loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,0)
@@ -299,4 +298,13 @@ func base_seven():
 	set_cell(loc.x,loc.y,2)
 func _on_Timer_timeout():
 	timeron = false
-	
+
+func _on_Player_collided(collision):
+	# KinematicCollision2D object emitted by character
+	if collision.collider is TileMap:
+		var tile_pos = collision.collider.world_to_map($Player.position)
+		tile_pos -= collision.normal  # Colliding tile
+		var tile = collision.collider.get_cellv(tile_pos)
+		print(tile)
+		print(tile_pos)
+
