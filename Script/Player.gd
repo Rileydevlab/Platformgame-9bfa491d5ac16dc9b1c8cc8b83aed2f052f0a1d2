@@ -8,6 +8,7 @@ var timeron = false
 var startspeed = true 
 var doublejump = false
 var powerupon = false
+var powerupcount = false
 var bullet = preload("res://Tscn/Bullet.tscn")
 signal collided
 onready var timer = get_node("bullettimer")
@@ -15,7 +16,7 @@ var time = 0
 func _ready():
 	timer.connect("timeout", self, "_on_Timer_timeout")
 func _physics_process(delta):
-	#print("X",motion.x)
+	print("X",motion.x)
 	#print("Y",motion.y)
 	if timeron == false:
 		timeron = true
@@ -29,24 +30,30 @@ func _physics_process(delta):
 	if global.powerup == 0:
 		motion.y += GRAVITY
 		motion.x += .1
+	if global.powerup == 1:
+		if powerupcount == false:
+			powerupon = true
+		motion.y += 17
 	if global.powerup == 1 && powerupon == true:
+		powerupcount = true
 		motion.x = 500
 		powerupon = false
-	if global.powerup == 1:
-		powerupon = true
-		motion.y += 17
+	if global.powerup == 2:
+		if powerupcount == false:
+			powerupon = true
+		motion.y += GRAVITY
 	if global.powerup == 2 && powerupon == true:
+		powerupcount = true
 		motion.x = 300
 		powerupon = false
-	if global.powerup == 2:
-		powerupon = true
-		motion.y += GRAVITY
+	if global.powerup == 3:
+		if powerupcount == false:
+			powerupon = true
+		motion.y += 15
 	if global.powerup == 3 && powerupon == true:
+		powerupcount = true
 		motion.x = 400
 		powerupon = false
-	if global.powerup == 3:
-		powerupon = true
-		motion.y += 15
 	if motion.x < 300:
 		global.powerup = 0
 		global.startspeed = true
