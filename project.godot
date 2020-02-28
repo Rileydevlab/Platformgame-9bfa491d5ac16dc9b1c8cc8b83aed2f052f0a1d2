@@ -36,3 +36,7 @@ window/stretch/aspect="keep_width"
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+quality/2d/use_pixel_snap=true

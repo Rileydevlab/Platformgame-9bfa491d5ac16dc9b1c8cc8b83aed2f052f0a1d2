@@ -333,6 +333,10 @@ func base_eight():
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 1
 	yaxis = yaxis - 6
 	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,4)

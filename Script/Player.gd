@@ -7,9 +7,10 @@ var motion = Vector2()
 var timeron = false
 var startspeed = true 
 var doublejump = false
-var Bullet = preload("res://Tscn/Bullet.tscn")
+var powerupon = false
+var bullet = preload("res://Tscn/Bullet.tscn")
 signal collided
-onready var timer = get_node("Timer2")
+onready var timer = get_node("bullettimer")
 var time = 0
 func _ready():
 	timer.connect("timeout", self, "_on_Timer_timeout")
@@ -22,25 +23,36 @@ func _physics_process(delta):
 	var friction = false
 	$Sprite.flip_h = false
 	$Sprite.play("run")
-	if global.powerup == 0 && global.startspeed == true:
+	if global.startspeed == true:
 		motion.x = 350
 		global.startspeed = false
 	if global.powerup == 0:
+		motion.y += GRAVITY
 		motion.x += .1
-		motion.y += GRAVITY
-	if global.powerup == 1:
-		motion.x = 450
-		motion.y += 17
-	if global.powerup == 2:
-		motion.x = 300
-		motion.y += GRAVITY
-	if global.powerup == 3:
-		motion.x = 400
-		motion.y += 15
-	if motion.x > 500 && global.powerup == 0:
+	if global.powerup == 1 && powerupon == true:
 		motion.x = 500
+		powerupon = false
+	if global.powerup == 1:
+		powerupon = true
+		motion.y += 17
+	if global.powerup == 2 && powerupon == true:
+		motion.x = 300
+		powerupon = false
+	if global.powerup == 2:
+		powerupon = true
+		motion.y += GRAVITY
+	if global.powerup == 3 && powerupon == true:
+		motion.x = 400
+		powerupon = false
+	if global.powerup == 3:
+		powerupon = true
+		motion.y += 15
 	if motion.x < 300:
-		motion.x = -10
+		global.powerup = 0
+		global.startspeed = true
+		get_tree().reload_current_scene()
+		print("restart")
+		pass
 	if motion.y > 2000:
 		global.powerup = 0
 		global.startspeed = true
@@ -74,7 +86,7 @@ func _on_Timer_timeout():
 	shoot()
 	timeron = true
 func shoot():
-	var b = Bullet.instance()
-	b.start($Muzzle.global_position, rotation)
-	get_parent().add_child(b)
+	var bulletinstance = bullet.instance()
+	bulletinstance.start($Muzzle.global_position, rotation)
+	get_parent().add_child(bulletinstance)
 

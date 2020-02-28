@@ -14,7 +14,7 @@ func _physics_process(delta):
 	if time < 7:
 		set_text("")
 	if time == 6:
-		add_color_override("font_color", Color(0.54,0.17,0.89,1))
+		add_color_override("font_color", Color( 0.42, 0.35, 0.8, 1 ))
 		for x in range(1):
 			var rand = randi()%3+1
 			var cycle = rand
@@ -35,7 +35,7 @@ func _physics_process(delta):
 			if cycle == 3:
 				set_text("Jump!")
 	if time == 10:
-		add_color_override("font_color", Color(0.75,0.75,0.75,1))
+		add_color_override("font_color", Color( 1, 0.84, 0, 1 ))
 		for x in range(1):
 			var rand = randi()%3+1
 			var cycle = rand
