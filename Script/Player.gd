@@ -6,6 +6,7 @@ const JUMP_HEIGHT = -500
 var motion = Vector2()
 var timeron = false
 var startspeed = true 
+var doublejump = false
 var Bullet = preload("res://Tscn/Bullet.tscn")
 signal collided
 onready var timer = get_node("Timer2")
@@ -28,7 +29,7 @@ func _physics_process(delta):
 		motion.x += .1
 		motion.y += GRAVITY
 	if global.powerup == 1:
-		motion.x = 500
+		motion.x = 450
 		motion.y += 17
 	if global.powerup == 2:
 		motion.x = 300
@@ -50,10 +51,14 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision:
 			emit_signal('collided', collision)
+	if Input.is_action_just_pressed("ui_up"):
+			if is_on_floor():
+				motion.y = JUMP_HEIGHT
+				doublejump = false
+			if is_on_floor() == false && doublejump == false:
+				motion.y = JUMP_HEIGHT
+				doublejump = true
 	if is_on_floor():
-		if Input.is_action_pressed("ui_up"):
-			motion.y = JUMP_HEIGHT
-			shoot()
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.2)
 	else:

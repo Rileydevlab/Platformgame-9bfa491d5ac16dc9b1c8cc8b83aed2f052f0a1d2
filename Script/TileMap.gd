@@ -13,7 +13,7 @@ func _physics_process(delta):
 		for i in range (10):
 			base_two()
 			startmap = false
-	var cycle = randi()%8+1
+	var cycle = randi()%9+1
 	if cycle == 1 && timeron == false:
 		base_one()
 		timeron = true
@@ -40,6 +40,10 @@ func _physics_process(delta):
 		timer.start()
 	if cycle == 7 && timeron == false:
 		base_seven()
+		timeron = true
+		timer.start()
+	if cycle == 8 && timeron == false:
+		base_eight()
 		timeron = true
 		timer.start()
 func base_one():
@@ -79,15 +83,31 @@ func base_one():
 func base_two():
 	var loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 6
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 6
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 6
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 6
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 6
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 6
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 6
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 6
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,5)
@@ -296,6 +316,38 @@ func base_seven():
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,2)
+func base_eight():
+	var loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 6
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 6
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 6
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 6
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 6
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 6
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,5)
+	yaxis = yaxis - 6
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,4)
+	yaxis = yaxis + 6
+	xaxis = xaxis + 1
+	loc = Vector2(xaxis,yaxis)
+	set_cell(loc.x,loc.y,5)
+
 func _on_Timer_timeout():
 	timeron = false
 
@@ -305,6 +357,6 @@ func _on_Player_collided(collision):
 		var tile_pos = collision.collider.world_to_map($Player.position)
 		tile_pos -= collision.normal  # Colliding tile
 		var tile = collision.collider.get_cellv(tile_pos)
-		print(tile)
-		print(tile_pos)
+		#print(tile)
+		#print(tile_pos)
 
