@@ -28,6 +28,7 @@ func _physics_process(delta):
 		motion.x = 350
 		global.startspeed = false
 	if global.powerup == 0:
+		powerupcount = false
 		motion.y += GRAVITY
 		motion.x += .1
 	if global.powerup == 1:
