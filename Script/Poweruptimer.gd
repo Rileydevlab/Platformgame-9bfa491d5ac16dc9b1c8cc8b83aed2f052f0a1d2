@@ -1,5 +1,4 @@
 extends Label
-
 onready var timer = get_node("Timer")
 var timerstart = false
 var time = 0

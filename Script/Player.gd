@@ -9,6 +9,8 @@ var startspeed = true
 var doublejump = false
 var powerupon = false
 var powerupcount = false
+var powerup = 0
+var powerupset = 0
 var bullet = preload("res://Tscn/Bullet.tscn")
 signal collided
 onready var timer = get_node("bullettimer")
@@ -16,7 +18,7 @@ var time = 0
 func _ready():
 	timer.connect("timeout", self, "_on_Timer_timeout")
 func _physics_process(delta):
-	print("X",motion.x)
+	#print("X",motion.x)
 	#print("Y",motion.y)
 	if timeron == false:
 		timeron = true
@@ -24,46 +26,31 @@ func _physics_process(delta):
 	var friction = false
 	$Sprite.flip_h = false
 	$Sprite.play("run")
-	if global.startspeed == true:
+	if startspeed == true:
 		motion.x = 350
-		global.startspeed = false
-	if global.powerup == 0:
-		powerupcount = false
+		startspeed = false
+	if powerup == 0:
 		motion.y += GRAVITY
-		motion.x += .1
-	if global.powerup == 1:
-		if powerupcount == false:
-			powerupon = true
+		if motion.x < 600:
+			motion.x += .1
+	if powerup == 1:
 		motion.y += 17
-	if global.powerup == 1 && powerupon == true:
-		powerupcount = true
-		motion.x = 500
-		powerupon = false
-	if global.powerup == 2:
-		if powerupcount == false:
-			powerupon = true
+		if motion.x < 600:
+			motion.x += .3
+		#motion.x = 500
+	if powerup == 2:
 		motion.y += GRAVITY
-	if global.powerup == 2 && powerupon == true:
-		powerupcount = true
-		motion.x = 300
-		powerupon = false
-	if global.powerup == 3:
-		if powerupcount == false:
-			powerupon = true
+		if motion.x > 300:
+			motion.x -= .3
+		#motion.x = 300
+	if powerup == 3:
 		motion.y += 15
-	if global.powerup == 3 && powerupon == true:
-		powerupcount = true
-		motion.x = 400
-		powerupon = false
+		motion.x += 0
+		#motion.x = 400
 	if motion.x < 300:
-		global.powerup = 0
-		global.startspeed = true
 		get_tree().reload_current_scene()
 		print("restart")
-		pass
 	if motion.y > 2000:
-		global.powerup = 0
-		global.startspeed = true
 		get_tree().reload_current_scene()
 		print("restart")
 		pass
@@ -71,13 +58,6 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision:
 			emit_signal('collided', collision)
-	if Input.is_action_just_pressed("ui_up"):
-			if is_on_floor():
-				motion.y = JUMP_HEIGHT
-				doublejump = false
-			if is_on_floor() == false && doublejump == false:
-				motion.y = JUMP_HEIGHT
-				doublejump = true
 	if is_on_floor():
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.2)
@@ -97,4 +77,18 @@ func shoot():
 	var bulletinstance = bullet.instance()
 	bulletinstance.start($Muzzle.global_position, rotation)
 	get_parent().add_child(bulletinstance)
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.is_pressed():
+			if is_on_floor():
+				motion.y = JUMP_HEIGHT
+				doublejump = false
+			if is_on_floor() == false && doublejump == false:
+				motion.y = JUMP_HEIGHT
+				doublejump = true
+func _on_poweruprandomizer_powerup(value):
+	#print("yes")
+	#print(value)
+	powerup = value
 

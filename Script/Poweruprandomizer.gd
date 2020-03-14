@@ -3,6 +3,8 @@ extends Label
 onready var timer = get_node("Timer")
 var timerstart = false
 var time = 0
+var powerupone = 0
+signal powerup(value)
 
 func _ready():
 	timer.connect("timeout", self, "_on_Timer_timeout")
@@ -54,11 +56,16 @@ func _physics_process(delta):
 			powerupnumber = 2
 		if poweruptext == "Jump!":
 			powerupnumber = 3
-		global.powerup = powerupnumber
+		powerupone = powerupnumber
+		sendpowerup()
 	if time == 15:
-		global.powerup = 0
-		global.startspeed = true
+		powerupone = 0
 		time = time - 15
+		sendpowerup()
 func _on_Timer_timeout():
 	time = time + 1
 	timerstart = false
+func sendpowerup():
+	#print(powerupone)
+	#print(powerupone)
+	emit_signal("powerup", powerupone)
