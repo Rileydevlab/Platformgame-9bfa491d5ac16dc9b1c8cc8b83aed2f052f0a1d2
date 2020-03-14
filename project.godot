@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Platformgame"
-run/main_scene="res://Tscn/World.tscn"
+run/main_scene="res://Tscn/Startmenu.tscn"
 config/icon="res://Sprites/icon.png"
 
 [display]
