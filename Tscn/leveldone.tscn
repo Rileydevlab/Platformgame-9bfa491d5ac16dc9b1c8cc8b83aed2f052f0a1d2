@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Script/leveldone.gd" type="Script" id=1]
 [ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://Sprites/run2.png" type="Texture" id=6]
 [ext_resource path="res://Script/Score.gd" type="Script" id=7]
 [ext_resource path="res://Script/High Score.gd" type="Script" id=8]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/background.png" type="Texture" id=9]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/cover_background.png" type="Texture" id=10]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/vent_background.png" type="Texture" id=11]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_repeating_background.png" type="Texture" id=12]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_base_background.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -36,6 +41,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( -126.654, 506.847 )
+texture = ExtResource( 9 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 12.1225
@@ -87,20 +96,44 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 281.953, 411.939 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
 position = Vector2( 509.779, 577.923 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 139.474, 425.309 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="vent_background" type="Sprite" parent="."]
+position = Vector2( 109.448, 806.803 )
+texture = ExtResource( 11 )
+
+[node name="cover_background" type="Sprite" parent="."]
+position = Vector2( 396.495, 871.026 )
+texture = ExtResource( 10 )
+
+[node name="pipe_base_background" type="Sprite" parent="cover_background"]
+position = Vector2( 69.3105, -510.856 )
+rotation = 1.5747
+scale = Vector2( 0.479161, 0.470966 )
+texture = ExtResource( 13 )
+
+[node name="pipe_repeating_background" type="Sprite" parent="."]
+position = Vector2( 119.235, 243.254 )
+rotation = -1.56625
+scale = Vector2( 0.737602, 1.21898 )
+texture = ExtResource( 12 )
+
+[node name="pipe_repeating_background2" type="Sprite" parent="."]
+position = Vector2( 508.388, 245.254 )
+rotation = -1.56625
+scale = Vector2( 0.737602, 1.21898 )
+texture = ExtResource( 12 )
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
