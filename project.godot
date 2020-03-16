@@ -19,6 +19,10 @@ config/name="Platformgame"
 run/main_scene="res://Tscn/Startmenu.tscn"
 config/icon="res://Sprites/icon.png"
 
+[autoload]
+
+Globals="*res://Script/globals.gd"
+
 [display]
 
 window/size/width=576

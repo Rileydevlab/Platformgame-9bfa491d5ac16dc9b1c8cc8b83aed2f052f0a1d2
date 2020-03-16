@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Script/leveldone.gd" type="Script" id=1]
+[ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/run1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/run3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/run0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/run2.png" type="Texture" id=6]
+[ext_resource path="res://Script/Score.gd" type="Script" id=7]
+[ext_resource path="res://Script/High Score.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 75
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Startmenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 12.1225
+margin_top = 361.39
+margin_right = 564.122
+margin_bottom = 787.39
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 90.0
+margin_right = 551.0
+margin_bottom = 161.0
+custom_fonts/font = SubResource( 1 )
+text = "Virus Runner"
+align = 1
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+margin_top = 165.0
+margin_right = 551.0
+margin_bottom = 210.0
+custom_fonts/font = SubResource( 2 )
+text = "Score:"
+align = 1
+script = ExtResource( 7 )
+
+[node name="High Score" type="Label" parent="VBoxContainer"]
+margin_top = 214.0
+margin_right = 551.0
+margin_bottom = 259.0
+custom_fonts/font = SubResource( 2 )
+text = "High Score:"
+align = 1
+script = ExtResource( 8 )
+
+[node name="StartGame" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
+margin_top = 263.0
+margin_right = 551.0
+margin_bottom = 336.0
+custom_fonts/font = SubResource( 3 )
+text = "Back to menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 281.953, 411.939 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 509.779, 577.923 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 139.474, 425.309 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]

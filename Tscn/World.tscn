@@ -1,207 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Sprites/Tiles/JungleDirtTileSet.png" type="Texture" id=1]
+[ext_resource path="res://Tres/factorytileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Tscn/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Script/TileMap.gd" type="Script" id=3]
-[ext_resource path="res://Script/Musicplayer.gd" type="Script" id=4]
-[ext_resource path="res://Music/gamerandone.wav" type="AudioStream" id=5]
-[ext_resource path="res://Music/gamerandtwo.wav" type="AudioStream" id=6]
-[ext_resource path="res://Background/bluemoon.png" type="Texture" id=7]
+[ext_resource path="res://Music/Space-Beat.wav" type="AudioStream" id=4]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/background.png" type="Texture" id=5]
+[ext_resource path="res://Background/Backgroundobjects.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Script/background.gd" type="Script" id=8]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
-
-[sub_resource type="TileSet" id=2]
-0/name = "0"
-0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 32, 32, 32 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 16, 16 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-0/z_index = 0
-1/name = "1"
-1/texture = ExtResource( 1 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 32, 32, 32, 32 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 16, 16 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-1/shape = SubResource( 1 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-1/z_index = 0
-2/name = "2"
-2/texture = ExtResource( 1 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 64, 32, 32, 32 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 16, 16 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-2/shape = SubResource( 1 )
-2/shape_one_way = false
-2/shape_one_way_margin = 1.0
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-2/z_index = 0
-3/name = "3"
-3/texture = ExtResource( 1 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 64, 160, 32, 32 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 16, 16 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-3/shape = SubResource( 1 )
-3/shape_one_way = false
-3/shape_one_way_margin = 1.0
-3/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-3/z_index = 0
-4/name = "4"
-4/texture = ExtResource( 1 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 160, 160, 32, 32 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 16, 16 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-4/shape = SubResource( 1 )
-4/shape_one_way = false
-4/shape_one_way_margin = 1.0
-4/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-4/z_index = 0
-5/name = "5"
-5/texture = ExtResource( 1 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 96, 160, 32, 32 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 16, 16 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-5/shape = SubResource( 1 )
-5/shape_one_way = false
-5/shape_one_way_margin = 1.0
-5/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-5/z_index = 0
-6/name = "6"
-6/texture = ExtResource( 1 )
-6/tex_offset = Vector2( 0, 0 )
-6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 96, 0, 32, 32 )
-6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
-6/navigation_offset = Vector2( 0, 0 )
-6/shape_offset = Vector2( 16, 16 )
-6/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-6/shape = SubResource( 1 )
-6/shape_one_way = false
-6/shape_one_way_margin = 1.0
-6/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-6/z_index = 0
-7/name = "7"
-7/texture = ExtResource( 1 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 128, 0, 32, 32 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shape_offset = Vector2( 16, 16 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-7/shape = SubResource( 1 )
-7/shape_one_way = false
-7/shape_one_way_margin = 1.0
-7/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-7/z_index = 0
-8/name = "8"
-8/texture = ExtResource( 1 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 160, 0, 32, 32 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/navigation_offset = Vector2( 0, 0 )
-8/shape_offset = Vector2( 16, 16 )
-8/shape_transform = Transform2D( 1, 0, 0, 1, 16, 16 )
-8/shape = SubResource( 1 )
-8/shape_one_way = false
-8/shape_one_way_margin = 1.0
-8/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
-} ]
-8/z_index = 0
 
 [node name="World" type="Node"]
 
@@ -209,25 +14,27 @@ extents = Vector2( 16, 16 )
 follow_viewport_enable = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 position = Vector2( 600, 37 )
 motion_scale = Vector2( 0.1, 0.1 )
 
+[node name="Backgroundobjects" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource( 7 )]
+
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
 show_behind_parent = true
 position = Vector2( -987.143, -3498.81 )
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 7680, 4320 )
+region_rect = Rect2( 0, 0, 7600, 4320 )
 script = ExtResource( 8 )
 
 [node name="Timer" type="Timer" parent="ParallaxBackground/ParallaxLayer/Background"]
 one_shot = true
 
+[node name="Timer" type="Timer" parent="ParallaxBackground/ParallaxLayer"]
+
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 3
 collision_mask = 3
@@ -252,13 +59,13 @@ current = true
 [node name="Node" type="Node" parent="TileMap/Player"]
 
 [node name="Muzzle" type="Position2D" parent="TileMap/Player"]
-position = Vector2( 31.6135, -15.606 )
+position = Vector2( -33.4978, -2.0652 )
 __meta__ = {
 "_gizmo_extents_": 20.0
 }
 
 [node name="bullettimer" type="Timer" parent="TileMap/Player"]
-wait_time = 0.1
+wait_time = 0.01
 
 [node name="poweruprandomizer" type="Node" parent="."]
 
@@ -266,16 +73,9 @@ wait_time = 0.1
 wait_time = 0.001
 one_shot = true
 
-[node name="Musicplayer" type="Node" parent="."]
-script = ExtResource( 4 )
+[node name="Node" type="Node" parent="."]
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Musicplayer"]
-stream = ExtResource( 5 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musicplayer"]
-stream = ExtResource( 6 )
-
-[node name="Timer" type="Timer" parent="Musicplayer"]
-wait_time = 4.0
-one_shot = true
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 4 )
+autoplay = true
 [connection signal="collided" from="TileMap/Player" to="TileMap" method="_on_Player_collided"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Script/Poweruptimer.gd" type="Script" id=1]
+[ext_resource path="res://Script/Scoretimer.gd" type="Script" id=2]
 [ext_resource path="res://Script/Poweruprandomizer.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/run0.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/run2.png" type="Texture" id=5]
@@ -95,6 +96,33 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Score" type="Label" parent="."]
+margin_left = -283.611
+margin_top = 240.73
+margin_right = 428.389
+margin_bottom = 285.73
+custom_fonts/font = SubResource( 5 )
+text = "Score:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scoretimer" type="Label" parent="."]
+margin_left = -283.611
+margin_top = 276.73
+margin_right = 428.389
+margin_bottom = 321.73
+custom_fonts/font = SubResource( 5 )
+text = "Next power up in:"
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Scoretimer"]
 
 [node name="Timeforpowerup" type="Label" parent="."]
 margin_left = -224.0
