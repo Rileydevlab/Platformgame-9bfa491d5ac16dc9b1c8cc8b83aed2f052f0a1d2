@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/background.gd" type="Script" id=1]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/background.png" type="Texture" id=2]
+
+[node name="Background" type="Sprite"]
+show_behind_parent = true
+position = Vector2( -987.143, -3498.81 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 7600, 4320 )
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+pause_animations = false
+freeze_bodies = false
+pause_particles = false
+pause_animated_sprites = false
+process_parent = true
+physics_process_parent = true

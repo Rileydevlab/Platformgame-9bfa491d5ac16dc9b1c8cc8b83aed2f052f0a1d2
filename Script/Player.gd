@@ -18,6 +18,7 @@ var time = 0
 func _ready():
 	timer.connect("timeout", self, "_on_Timer_timeout")
 func _physics_process(delta):
+	print(Engine.get_frames_per_second())
 	#print("X",motion.x)
 	#print("Y",motion.y)
 	if timeron == false:
@@ -73,7 +74,6 @@ func _physics_process(delta):
 	motion = move_and_slide(motion, UP)
 	pass
 func _on_Timer_timeout():
-	shoot()
 	timeron = true
 func shoot():
 	var bulletinstance = bullet.instance()

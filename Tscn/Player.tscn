@@ -17,11 +17,6 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "run",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "fall",
@@ -31,6 +26,11 @@ animations = [ {
 "loop": true,
 "name": "jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -53,12 +53,13 @@ font_data = ExtResource( 8 )
 script = ExtResource( 10 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "run"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
