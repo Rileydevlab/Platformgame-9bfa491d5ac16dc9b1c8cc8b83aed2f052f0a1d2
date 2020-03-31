@@ -4,9 +4,6 @@ extends Control
 func _on_StartGame_pressed():
 	get_tree().change_scene("res://Tscn/World.tscn")
 	pass
-func _on_StartGameeasy_pressed():
-	get_tree().change_scene("res://Tscn/Worldeasy.tscn")
-	pass
 
 
 func _on_QuitGame_pressed():

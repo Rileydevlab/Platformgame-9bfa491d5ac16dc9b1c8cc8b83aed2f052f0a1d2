@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Script/Poweruptimer.gd" type="Script" id=1]
-[ext_resource path="res://Script/Scoretimer.gd" type="Script" id=2]
+[ext_resource path="res://Script/Scoretimereasy.gd" type="Script" id=2]
 [ext_resource path="res://Script/Poweruprandomizer.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/run0.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/run2.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/run1.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/run3.png" type="Texture" id=7]
 [ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Script/Player.gd" type="Script" id=10]
+[ext_resource path="res://Script/Playereasy.gd" type="Script" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -50,7 +50,7 @@ size = 50
 font_data = ExtResource( 8 )
 
 [node name="Player" type="KinematicBody2D"]
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

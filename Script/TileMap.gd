@@ -352,7 +352,6 @@ func base_eight():
 	xaxis = xaxis + 1
 	loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,5)
-
 func _on_Timer_timeout():
 	timeron = false
 

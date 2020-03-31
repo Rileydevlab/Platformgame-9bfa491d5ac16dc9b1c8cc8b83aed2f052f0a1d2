@@ -1,4 +1,3 @@
 extends Node
-
-var current_score = 0 
-var high_score = 0
+var current_score1 = 0
+var current_score2 = 0

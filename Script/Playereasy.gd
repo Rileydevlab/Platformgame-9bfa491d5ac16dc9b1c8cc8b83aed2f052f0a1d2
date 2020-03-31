@@ -25,15 +25,15 @@ func _physics_process(delta):
 	if powerup == 0:
 		motion.y += GRAVITY
 		if motion.x < 600:
-			motion.x += .1
+			motion.x += .01
 	if powerup == 1:
 		motion.y += 17
 		if motion.x < 600:
-			motion.x += .3
+			motion.x += .1
 		#motion.x = 500
 	if powerup == 2:
 		motion.y += GRAVITY
-		if motion.x > 300:
+		if motion.x > 301:
 			motion.x -= .3
 		#motion.x = 300
 	if powerup == 3:
@@ -42,11 +42,11 @@ func _physics_process(delta):
 		#motion.x = 400
 	if motion.x < 300:
 		get_tree().reload_current_scene()
-		get_tree().change_scene("res://Tscn/leveldone.tscn")
+		get_tree().change_scene("res://Tscn/leveldoneeasy.tscn")
 		print("restart")
 	if motion.y > 2000:
 		get_tree().reload_current_scene()
-		get_tree().change_scene("res://Tscn/leveldone.tscn")
+		get_tree().change_scene("res://Tscn/leveldoneeasy.tscn")
 		print("restart")
 		pass
 	for i in get_slide_count():

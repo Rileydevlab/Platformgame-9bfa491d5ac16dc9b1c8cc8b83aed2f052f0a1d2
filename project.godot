@@ -22,6 +22,7 @@ config/icon="res://Sprites/icon.png"
 [autoload]
 
 Globals="*res://Script/globals.gd"
+Data="*res://Script/data.gd"
 
 [display]
 

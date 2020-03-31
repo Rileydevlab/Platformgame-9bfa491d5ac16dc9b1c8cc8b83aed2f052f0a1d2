@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Script/Startmenu.gd" type="Script" id=1]
 [ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=2]
@@ -11,25 +11,21 @@
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_background.png" type="Texture" id=9]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pìpe_background.png" type="Texture" id=10]
 
-[sub_resource type="DynamicFont" id=1]
-size = 80
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 75
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 70
-font_data = ExtResource( 2 )
-
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 75
+font_data = ExtResource( 2 )
 
 [node name="Startmenu" type="Control"]
 anchor_right = 1.0
@@ -43,73 +39,10 @@ __meta__ = {
 position = Vector2( 337.363, 525.911 )
 texture = ExtResource( 7 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 12.1225
-margin_top = 404.39
-margin_right = 564.122
-margin_bottom = 830.39
-alignment = 1
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 26.0
-margin_right = 551.0
-margin_bottom = 97.0
-custom_fonts/font = SubResource( 1 )
-text = "Virus Runner"
-align = 1
-
-[node name="StartGame" type="Button" parent="VBoxContainer"]
-modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
-margin_top = 101.0
-margin_right = 551.0
-margin_bottom = 174.0
-custom_fonts/font = SubResource( 2 )
-text = "Mode 1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StartGame3" type="Button" parent="VBoxContainer"]
-modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
-margin_top = 178.0
-margin_right = 551.0
-margin_bottom = 251.0
-custom_fonts/font = SubResource( 2 )
-text = "Mode 2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StartGame2" type="Button" parent="VBoxContainer"]
-modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
-margin_top = 255.0
-margin_right = 551.0
-margin_bottom = 328.0
-custom_fonts/font = SubResource( 2 )
-text = "Credits"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="QuitGame" type="Button" parent="VBoxContainer"]
-modulate = Color( 0.262745, 0.32549, 1, 1 )
-margin_top = 332.0
-margin_right = 551.0
-margin_bottom = 400.0
-custom_fonts/font = SubResource( 3 )
-text = "Resume Reality"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 286.086, 391.625 )
-frames = SubResource( 4 )
-frame = 2
+position = Vector2( 284.654, 314.298 )
+frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -127,7 +60,56 @@ texture = ExtResource( 9 )
 position = Vector2( 290.751, 912.619 )
 scale = Vector2( 0.633111, 0.496842 )
 texture = ExtResource( 8 )
-[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 12.1225
+margin_top = 348.689
+margin_right = 564.122
+margin_bottom = 804.689
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 77.0
+margin_right = 551.0
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 2 )
+text = "Virus Runner"
+align = 1
+
+[node name="StartGame" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.356863, 0.960784, 0.188235, 1 )
+margin_top = 152.0
+margin_right = 551.0
+margin_bottom = 225.0
+custom_fonts/font = SubResource( 3 )
+text = "Easy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGame3" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.960784, 0.929412, 0.188235, 1 )
+margin_top = 229.0
+margin_right = 551.0
+margin_bottom = 302.0
+custom_fonts/font = SubResource( 3 )
+text = "Hard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGame5" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.188235, 0.498039, 0.960784, 1 )
+margin_top = 306.0
+margin_right = 551.0
+margin_bottom = 379.0
+custom_fonts/font = SubResource( 3 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGameeasy_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartGame3" to="." method="_on_StartGame_pressed"]
-[connection signal="pressed" from="VBoxContainer/StartGame2" to="." method="_on_StartGame_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitGame" to="." method="_on_QuitGame_pressed"]

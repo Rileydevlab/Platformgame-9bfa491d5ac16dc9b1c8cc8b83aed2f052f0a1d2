@@ -12,5 +12,5 @@ func _physics_process(delta):
 	set_text(str(time))
 func _on_Timer_timeout():
 	time = time + 1
-	Globals.current_score2 = time
+	Globals.current_score1 = time
 	timerstart = false
