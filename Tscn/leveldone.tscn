@@ -57,26 +57,35 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 90.0
+margin_top = 65.0
 margin_right = 551.0
-margin_bottom = 161.0
+margin_bottom = 136.0
 custom_fonts/font = SubResource( 1 )
 text = "Virus Runner"
 align = 1
 
-[node name="Score" type="Label" parent="VBoxContainer"]
-margin_top = 165.0
+[node name="High Score2" type="Label" parent="VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 140.0
 margin_right = 551.0
-margin_bottom = 210.0
+margin_bottom = 185.0
+custom_fonts/font = SubResource( 2 )
+text = "Hard"
+align = 1
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+margin_top = 189.0
+margin_right = 551.0
+margin_bottom = 234.0
 custom_fonts/font = SubResource( 2 )
 text = "Score:"
 align = 1
 script = ExtResource( 7 )
 
 [node name="High Score" type="Label" parent="VBoxContainer"]
-margin_top = 214.0
+margin_top = 238.0
 margin_right = 551.0
-margin_bottom = 259.0
+margin_bottom = 283.0
 custom_fonts/font = SubResource( 2 )
 text = "High Score:"
 align = 1
@@ -84,9 +93,9 @@ script = ExtResource( 8 )
 
 [node name="StartGame" type="Button" parent="VBoxContainer"]
 modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
-margin_top = 263.0
+margin_top = 287.0
 margin_right = 551.0
-margin_bottom = 336.0
+margin_bottom = 360.0
 custom_fonts/font = SubResource( 3 )
 text = "Back to menu"
 __meta__ = {
@@ -94,18 +103,18 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 281.953, 411.939 )
+position = Vector2( 281.953, 389.778 )
 frames = SubResource( 4 )
 frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 509.779, 577.923 )
+position = Vector2( 496.483, 604.408 )
 frames = SubResource( 4 )
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 139.474, 425.309 )
+position = Vector2( 139.474, 402.04 )
 frames = SubResource( 4 )
 playing = true
 

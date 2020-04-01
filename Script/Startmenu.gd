@@ -13,3 +13,13 @@ func _on_QuitGame_pressed():
 	get_tree().set_auto_accept_quit(false)
 	get_tree().quit()
 	pass
+
+
+func _on_StartGamehighscores_pressed():
+	get_tree().change_scene("res://Tscn/HighScores.tscn")
+	pass
+
+
+func _on_StartGamecredits_pressed():
+	get_tree().change_scene("res://Tscn/Credits.tscn")
+	pass

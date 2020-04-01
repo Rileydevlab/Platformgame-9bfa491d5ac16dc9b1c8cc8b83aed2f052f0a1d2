@@ -6,8 +6,8 @@
 [ext_resource path="res://Sprites/run3.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/run0.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/run2.png" type="Texture" id=6]
-[ext_resource path="res://Script/Score1.gd" type="Script" id=7]
-[ext_resource path="res://Script/HighScore1.gd" type="Script" id=8]
+[ext_resource path="res://Script/Highscores.gd" type="Script" id=7]
+[ext_resource path="res://Script/HighscoresHard.gd" type="Script" id=8]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/background.png" type="Texture" id=9]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/cover_background.png" type="Texture" id=10]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/vent_background.png" type="Texture" id=11]
@@ -57,35 +57,44 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 65.0
+margin_top = 41.0
 margin_right = 551.0
-margin_bottom = 136.0
+margin_bottom = 112.0
 custom_fonts/font = SubResource( 1 )
 text = "Virus Runner"
 align = 1
 
-[node name="High Score2" type="Label" parent="VBoxContainer"]
+[node name="Score" type="Label" parent="VBoxContainer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_top = 140.0
+margin_top = 116.0
 margin_right = 551.0
-margin_bottom = 185.0
+margin_bottom = 161.0
 custom_fonts/font = SubResource( 2 )
 text = "Easy"
 align = 1
 
-[node name="Score" type="Label" parent="VBoxContainer"]
-margin_top = 189.0
+[node name="High Score" type="Label" parent="VBoxContainer"]
+margin_top = 165.0
 margin_right = 551.0
-margin_bottom = 234.0
+margin_bottom = 210.0
 custom_fonts/font = SubResource( 2 )
-text = "Score:"
+text = "High Score:"
 align = 1
 script = ExtResource( 7 )
 
-[node name="High Score" type="Label" parent="VBoxContainer"]
-margin_top = 238.0
+[node name="Score2" type="Label" parent="VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 214.0
 margin_right = 551.0
-margin_bottom = 283.0
+margin_bottom = 259.0
+custom_fonts/font = SubResource( 2 )
+text = "Hard"
+align = 1
+
+[node name="High Score2" type="Label" parent="VBoxContainer"]
+margin_top = 263.0
+margin_right = 551.0
+margin_bottom = 308.0
 custom_fonts/font = SubResource( 2 )
 text = "High Score:"
 align = 1
@@ -93,9 +102,9 @@ script = ExtResource( 8 )
 
 [node name="StartGame" type="Button" parent="VBoxContainer"]
 modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
-margin_top = 287.0
+margin_top = 312.0
 margin_right = 551.0
-margin_bottom = 360.0
+margin_bottom = 385.0
 custom_fonts/font = SubResource( 3 )
 text = "Back to menu"
 __meta__ = {
@@ -103,26 +112,27 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 281.953, 389.778 )
+position = Vector2( 279.162, 362.67 )
 frames = SubResource( 4 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 499.807, 602.192 )
+position = Vector2( 221.828, 376.193 )
 frames = SubResource( 4 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 140.582, 400.932 )
+position = Vector2( 125.07, 365.475 )
 frames = SubResource( 4 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="vent_background" type="Sprite" parent="."]
-position = Vector2( 109.448, 806.803 )
+position = Vector2( 111.664, 856.664 )
 texture = ExtResource( 11 )
 
 [node name="cover_background" type="Sprite" parent="."]

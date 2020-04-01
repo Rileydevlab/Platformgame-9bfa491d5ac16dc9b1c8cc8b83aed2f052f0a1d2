@@ -57,9 +57,10 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 0.494118, 0, 1 )
 frames = SubResource( 1 )
 animation = "run"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -67,15 +68,15 @@ position = Vector2( -2, 25 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -2, -10 )
+position = Vector2( -2, -9.70801 )
 scale = Vector2( 2.2, 2.2 )
 shape = SubResource( 3 )
 
 [node name="poweruprandomizer" type="Label" parent="."]
-margin_left = -119.0
-margin_top = -115.0
-margin_right = 122.0
-margin_bottom = -52.0
+margin_left = -118.708
+margin_top = -115.292
+margin_right = 122.292
+margin_bottom = -52.292
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 align = 1

@@ -72,18 +72,18 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 77.0
+margin_top = 38.0
 margin_right = 551.0
-margin_bottom = 148.0
+margin_bottom = 109.0
 custom_fonts/font = SubResource( 2 )
 text = "Virus Runner"
 align = 1
 
 [node name="StartGame" type="Button" parent="VBoxContainer"]
 modulate = Color( 0.356863, 0.960784, 0.188235, 1 )
-margin_top = 152.0
+margin_top = 113.0
 margin_right = 551.0
-margin_bottom = 225.0
+margin_bottom = 186.0
 custom_fonts/font = SubResource( 3 )
 text = "Easy"
 __meta__ = {
@@ -91,21 +91,32 @@ __meta__ = {
 }
 
 [node name="StartGame3" type="Button" parent="VBoxContainer"]
-modulate = Color( 0.960784, 0.929412, 0.188235, 1 )
-margin_top = 229.0
+modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
+margin_top = 190.0
 margin_right = 551.0
-margin_bottom = 302.0
+margin_bottom = 263.0
 custom_fonts/font = SubResource( 3 )
 text = "Hard"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="StartGame6" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.717647, 0.188235, 0.960784, 1 )
+margin_top = 267.0
+margin_right = 551.0
+margin_bottom = 340.0
+custom_fonts/font = SubResource( 3 )
+text = "High Scores"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartGame5" type="Button" parent="VBoxContainer"]
 modulate = Color( 0.188235, 0.498039, 0.960784, 1 )
-margin_top = 306.0
+margin_top = 344.0
 margin_right = 551.0
-margin_bottom = 379.0
+margin_bottom = 417.0
 custom_fonts/font = SubResource( 3 )
 text = "Credits"
 __meta__ = {
@@ -113,3 +124,5 @@ __meta__ = {
 }
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGameeasy_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartGame3" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartGame6" to="." method="_on_StartGamehighscores_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartGame5" to="." method="_on_StartGamecredits_pressed"]
