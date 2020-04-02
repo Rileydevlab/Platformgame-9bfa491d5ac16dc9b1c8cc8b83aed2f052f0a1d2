@@ -2,7 +2,7 @@
 
 [ext_resource path="res://TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tscn/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Music/Space-Beat.wav" type="AudioStream" id=4]
+[ext_resource path="res://Music/Virus Runner Song 2.wav" type="AudioStream" id=3]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Background/Backgroundobjects.tscn" type="PackedScene" id=7]
 
@@ -39,5 +39,5 @@ one_shot = true
 [node name="Node" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 autoplay = true

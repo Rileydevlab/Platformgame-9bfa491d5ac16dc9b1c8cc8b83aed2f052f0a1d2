@@ -1,0 +1,143 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Script/leveldone.gd" type="Script" id=1]
+[ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/run1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/run3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/run0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/run2.png" type="Texture" id=6]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/background.png" type="Texture" id=9]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/cover_background.png" type="Texture" id=10]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/vent_background.png" type="Texture" id=11]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_repeating_background.png" type="Texture" id=12]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_base_background.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 75
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Startmenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( -126.654, 506.847 )
+texture = ExtResource( 9 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 12.1225
+margin_top = 361.39
+margin_right = 564.122
+margin_bottom = 787.39
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 41.0
+margin_right = 551.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 1 )
+text = "Virus Runner"
+align = 1
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 116.0
+margin_right = 551.0
+margin_bottom = 161.0
+custom_fonts/font = SubResource( 2 )
+text = "Jump"
+align = 1
+
+[node name="Score2" type="Label" parent="VBoxContainer"]
+margin_top = 165.0
+margin_right = 551.0
+margin_bottom = 210.0
+custom_fonts/font = SubResource( 2 )
+text = "Tap!"
+align = 1
+
+[node name="Score3" type="Label" parent="VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 214.0
+margin_right = 551.0
+margin_bottom = 259.0
+custom_fonts/font = SubResource( 2 )
+text = "Double Jump"
+align = 1
+
+[node name="Score4" type="Label" parent="VBoxContainer"]
+margin_top = 263.0
+margin_right = 551.0
+margin_bottom = 308.0
+custom_fonts/font = SubResource( 2 )
+text = "Tap Twice!"
+align = 1
+
+[node name="StartGame" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.960784, 0.188235, 0.188235, 1 )
+margin_top = 312.0
+margin_right = 551.0
+margin_bottom = 385.0
+custom_fonts/font = SubResource( 3 )
+text = "Back to menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 282.527, 364.309 )
+frames = SubResource( 4 )
+frame = 3
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="vent_background" type="Sprite" parent="."]
+position = Vector2( 111.664, 856.664 )
+texture = ExtResource( 11 )
+
+[node name="cover_background" type="Sprite" parent="."]
+position = Vector2( 396.495, 871.026 )
+texture = ExtResource( 10 )
+
+[node name="pipe_base_background" type="Sprite" parent="cover_background"]
+position = Vector2( 69.3105, -510.856 )
+rotation = 1.5747
+scale = Vector2( 0.479161, 0.470966 )
+texture = ExtResource( 13 )
+
+[node name="pipe_repeating_background" type="Sprite" parent="."]
+position = Vector2( 119.235, 243.254 )
+rotation = -1.56625
+scale = Vector2( 0.737602, 1.21898 )
+texture = ExtResource( 12 )
+
+[node name="pipe_repeating_background2" type="Sprite" parent="."]
+position = Vector2( 508.388, 245.254 )
+rotation = -1.56625
+scale = Vector2( 0.737602, 1.21898 )
+texture = ExtResource( 12 )
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
