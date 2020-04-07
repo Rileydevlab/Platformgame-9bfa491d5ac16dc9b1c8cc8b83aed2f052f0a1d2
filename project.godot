@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Platformgame"
 run/main_scene="res://Tscn/Startmenu.tscn"
-boot_splash/image="res://Sprites/splashscreenvirusrunner.png"
+boot_splash/image="res://Sprites/bootscreen.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 
 [autoload]

@@ -1,17 +1,22 @@
 extends KinematicBody2D
 const UP = Vector2(0,-1)
-var GRAVITY = 20
 const powerupgravity = 15
 const JUMP_HEIGHT = -500
+var GRAVITY = 20
 var motion = Vector2()
 var timeron = false
+var playerpush = false
 var startspeed = true 
 var doublejump = false
 var powerupon = false
 var powerupcount = false
 var powerup = 0
 var powerupset = 0
+onready var timer = get_node("Timer")
 signal collided
+
+func _ready():
+	timer.connect("timeout", self, "_on_Timer_timeout")
 func _physics_process(delta):
 	#print(Engine.get_frames_per_second())
 	#print("X",motion.x)
@@ -33,7 +38,7 @@ func _physics_process(delta):
 		#motion.x = 500
 	if powerup == 2:
 		motion.y += GRAVITY
-		if motion.x > 300:
+		if motion.x > 301:
 			motion.x -= .3
 		#motion.x = 300
 	if powerup == 3:
@@ -41,9 +46,18 @@ func _physics_process(delta):
 		motion.x += 0
 		#motion.x = 400
 	if motion.x < 300:
-		get_tree().reload_current_scene()
-		get_tree().change_scene("res://Tscn/leveldone.tscn")
-		print("restart")
+		#motion.y += 100
+		if timeron == false && playerpush == false:
+			motion.x -= 200
+			timer.start()
+			playerpush = true
+			print("restart")
+		if timeron == true && playerpush == true:
+			motion.x += 300
+			timeron = false 
+			playerpush = false
+		#get_tree().reload_current_scene()
+		#get_tree().change_scene("res://Tscn/leveldone.tscn")
 	if motion.y > 2000:
 		get_tree().reload_current_scene()
 		get_tree().change_scene("res://Tscn/leveldone.tscn")
@@ -80,4 +94,5 @@ func _on_poweruprandomizer_powerup(value):
 	#print("yes")
 	#print(value)
 	powerup = value
-
+func _on_Timer_timeout():
+	timeron = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Script/leveldone.gd" type="Script" id=1]
 [ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=2]
@@ -9,10 +9,8 @@
 [ext_resource path="res://Script/Highscores.gd" type="Script" id=7]
 [ext_resource path="res://Script/HighscoresHard.gd" type="Script" id=8]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/background.png" type="Texture" id=9]
-[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/cover_background.png" type="Texture" id=10]
-[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/vent_background.png" type="Texture" id=11]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/water/toxic_water_repeating.png" type="Texture" id=10]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_repeating_background.png" type="Texture" id=12]
-[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_base_background.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -78,6 +76,7 @@ margin_top = 165.0
 margin_right = 551.0
 margin_bottom = 210.0
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "High Score:"
 align = 1
 script = ExtResource( 7 )
@@ -88,6 +87,7 @@ margin_top = 214.0
 margin_right = 551.0
 margin_bottom = 259.0
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Hard"
 align = 1
 
@@ -112,38 +112,24 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 279.162, 362.67 )
+position = Vector2( 490.19, 377.743 )
 frames = SubResource( 4 )
 frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 221.828, 376.193 )
+position = Vector2( 223.335, 377.7 )
 frames = SubResource( 4 )
 frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 125.07, 365.475 )
+position = Vector2( 140.143, 377.534 )
 frames = SubResource( 4 )
 frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="vent_background" type="Sprite" parent="."]
-position = Vector2( 111.664, 856.664 )
-texture = ExtResource( 11 )
-
-[node name="cover_background" type="Sprite" parent="."]
-position = Vector2( 396.495, 871.026 )
-texture = ExtResource( 10 )
-
-[node name="pipe_base_background" type="Sprite" parent="cover_background"]
-position = Vector2( 69.3105, -510.856 )
-rotation = 1.5747
-scale = Vector2( 0.479161, 0.470966 )
-texture = ExtResource( 13 )
 
 [node name="pipe_repeating_background" type="Sprite" parent="."]
 position = Vector2( 119.235, 243.254 )
@@ -156,4 +142,8 @@ position = Vector2( 508.388, 245.254 )
 rotation = -1.56625
 scale = Vector2( 0.737602, 1.21898 )
 texture = ExtResource( 12 )
+
+[node name="toxic_water_repeating" type="Sprite" parent="."]
+position = Vector2( 301.457, 953.047 )
+texture = ExtResource( 10 )
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]

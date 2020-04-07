@@ -13,40 +13,39 @@ func _physics_process(delta):
 		for i in range (10):
 			base_two()
 			startmap = false
-	for i in range (500):
-		var cycle = randi()%9+1
-		if cycle == 1 && timeron == false:
-			base_one()
-			timeron = true
-			timer.start()
-		if cycle == 2 && timeron == false:
-			base_two()
-			timeron = true
-			timer.start()
-		if cycle == 3 && timeron == false:
-			base_three()
-			timeron = true
-			timer.start()
-		if cycle == 4 && timeron == false:
-			base_four()
-			timeron = true
-			timer.start()
-		if cycle == 5 && timeron == false:
-			base_five()
-			timeron = true
-			timer.start()
-		if cycle == 6 && timeron == false:
-			base_six()
-			timeron = true
-			timer.start()
-		if cycle == 7 && timeron == false:
-			base_seven()
-			timeron = true
-			timer.start()
-		if cycle == 8 && timeron == false:
-			base_eight()
-			timeron = true
-			timer.start()
+	var cycle = randi()%9+1
+	if cycle == 1 && timeron == false:
+		base_one()
+		timeron = true
+		timer.start()
+	if cycle == 2 && timeron == false:
+		base_two()
+		timeron = true
+		timer.start()
+	if cycle == 3 && timeron == false:
+		base_three()
+		timeron = true
+		timer.start()
+	if cycle == 4 && timeron == false:
+		base_four()
+		timeron = true
+		timer.start()
+	if cycle == 5 && timeron == false:
+		base_five()
+		timeron = true
+		timer.start()
+	if cycle == 6 && timeron == false:
+		base_six()
+		timeron = true
+		timer.start()
+	if cycle == 7 && timeron == false:
+		base_seven()
+		timeron = true
+		timer.start()
+	if cycle == 8 && timeron == false:
+		base_eight()
+		timeron = true
+		timer.start()
 func base_one():
 	var loc = Vector2(xaxis,yaxis)
 	set_cell(loc.x,loc.y,0)

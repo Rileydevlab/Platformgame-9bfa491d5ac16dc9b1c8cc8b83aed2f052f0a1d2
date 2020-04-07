@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Script/leveldone.gd" type="Script" id=1]
 [ext_resource path="res://Text/spacetext.ttf" type="DynamicFontData" id=2]
@@ -6,11 +6,10 @@
 [ext_resource path="res://Sprites/run3.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/run0.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/run2.png" type="Texture" id=6]
+[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/water/toxic_water_repeating.png" type="Texture" id=7]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/background.png" type="Texture" id=9]
-[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/cover_background.png" type="Texture" id=10]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/vent_background.png" type="Texture" id=11]
 [ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_repeating_background.png" type="Texture" id=12]
-[ext_resource path="res://Background/megafactoryscenecreation2dgameassetpack--1b597o5r0b269c9c7w/pngs/background_creation_items/pipe_base_background.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -119,16 +118,6 @@ playing = true
 position = Vector2( 111.664, 856.664 )
 texture = ExtResource( 11 )
 
-[node name="cover_background" type="Sprite" parent="."]
-position = Vector2( 396.495, 871.026 )
-texture = ExtResource( 10 )
-
-[node name="pipe_base_background" type="Sprite" parent="cover_background"]
-position = Vector2( 69.3105, -510.856 )
-rotation = 1.5747
-scale = Vector2( 0.479161, 0.470966 )
-texture = ExtResource( 13 )
-
 [node name="pipe_repeating_background" type="Sprite" parent="."]
 position = Vector2( 119.235, 243.254 )
 rotation = -1.56625
@@ -140,4 +129,8 @@ position = Vector2( 508.388, 245.254 )
 rotation = -1.56625
 scale = Vector2( 0.737602, 1.21898 )
 texture = ExtResource( 12 )
+
+[node name="toxic_water_repeating" type="Sprite" parent="."]
+position = Vector2( 314.245, 1016.35 )
+texture = ExtResource( 7 )
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
