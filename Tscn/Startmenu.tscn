@@ -41,9 +41,8 @@ position = Vector2( 337.363, 525.911 )
 texture = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 284.654, 314.298 )
+position = Vector2( 303.654, 312.298 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -71,7 +70,7 @@ __meta__ = {
 margin_right = 551.0
 margin_bottom = 71.0
 custom_fonts/font = SubResource( 2 )
-text = "Virus Runner"
+text = "Glitch Runner"
 align = 1
 
 [node name="StartGame" type="Button" parent="VBoxContainer"]
@@ -130,8 +129,8 @@ __meta__ = {
 }
 
 [node name="light" type="Sprite" parent="."]
-position = Vector2( 288.459, 118.425 )
-scale = Vector2( 1.36998, 1 )
+position = Vector2( 276.182, 90.9692 )
+scale = Vector2( 1.46005, 1.08388 )
 texture = ExtResource( 11 )
 
 [node name="toxic_water_repeating" type="Sprite" parent="."]

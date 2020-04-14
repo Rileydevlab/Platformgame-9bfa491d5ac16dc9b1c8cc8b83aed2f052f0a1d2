@@ -62,7 +62,7 @@ margin_top = 41.0
 margin_right = 551.0
 margin_bottom = 112.0
 custom_fonts/font = SubResource( 1 )
-text = "Virus Runner"
+text = "Glitch Runner"
 align = 1
 
 [node name="Score" type="Label" parent="VBoxContainer"]
@@ -133,7 +133,7 @@ frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 282.527, 364.309 )
+position = Vector2( 302.171, 365.537 )
 frames = SubResource( 4 )
 frame = 2
 playing = true

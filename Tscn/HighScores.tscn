@@ -59,7 +59,7 @@ margin_top = 41.0
 margin_right = 551.0
 margin_bottom = 112.0
 custom_fonts/font = SubResource( 1 )
-text = "Virus Runner"
+text = "Glitch Runner"
 align = 1
 
 [node name="Score" type="Label" parent="VBoxContainer"]
@@ -114,19 +114,17 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 490.19, 377.743 )
 frames = SubResource( 4 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 223.335, 377.7 )
+position = Vector2( 206.187, 377.7 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 140.143, 377.534 )
+position = Vector2( 67.0403, 367.607 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
